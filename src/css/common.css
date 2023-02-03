@@ -57,10 +57,10 @@ button[type='submit'] {
 }
 
 .photo-card:hover{
-  cursor: pointer;
   box-shadow: 8px 8px 6px 1px rgba(0, 0, 0, 0.3);
-  transform: translateX(-3) translateY(-3);
+  transform: translateX(-5) translateY(-5);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
 }
 
 .photo-card img {

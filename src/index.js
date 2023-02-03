@@ -1,19 +1,19 @@
 const axios = require('axios');
 const Notiflix = require('notiflix');
 require('notiflix/build/notiflix-aio');
-import SimpleLightbox from 'simplelightbox';
+import SimpleLightbox from "simplelightbox";
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const API_KEY = '33350132-5d1ea35eb331ac29bb43c59ce';
 const form = document.querySelector('#search-form');
 const input = form.querySelector('input');
+const gallery = document.querySelector('.gallery');
 const loadMoreButton = document.querySelector('.load-more');
 
 let page = 1;
 
 form.addEventListener('submit', async event => {
   event.preventDefault();
-
   page = 1;
   loadMoreButton.style.display = 'none';
   const query = input.value;
@@ -69,12 +69,11 @@ loadMoreButton.addEventListener('click', async event => {
 });
 
 const showImages = images => {
-  const gallery = document.querySelector('.gallery');
   images.forEach(image => {
     const div = document.createElement('div');
     div.classList.add('photo-card');
     div.innerHTML = `
-          <a href="" class="card-image"><img src="${image.webformatURL}" alt="${image.tags}" loading="lazy"/></a>
+          <a href="${image.webformatURL}" class="card-image"><img src="${image.webformatURL}" alt="${image.tags}" loading="lazy"/></a>
           <div class="info">
               <p class="info-item"><b>Likes:</b> ${image.likes}</p>
               <p class="info-item"><b>Views:</b> ${image.views}</p>
@@ -84,9 +83,7 @@ const showImages = images => {
           `;
     gallery.appendChild(div);
   });
-};
-
-const lightbox = new SimpleLightbox('.card-image a', {
+  let lightbox = new SimpleLightbox('.gallery .photo-card a', {
   captionsData: 'alt',
   captionDelay: 250,
   captionPosition: 'bottom',
@@ -94,12 +91,4 @@ const lightbox = new SimpleLightbox('.card-image a', {
 
 lightbox.on(`show.lightbox`);
 lightbox.refresh();
-
-const { height: cardHeight } = document
-  .querySelector(".gallery")
-  .firstElementChild.getBoundingClientRect();
-
-window.scrollBy({
-  top: cardHeight * 2,
-  behavior: "smooth",
-});
+};
