@@ -12,7 +12,10 @@ const loadMoreButton = document.querySelector('.load-more');
 
 let page = 1;
 
+const clearCode = () => { gallery.innerHTML = "" };
+
 form.addEventListener('submit', async event => {
+  clearCode();
   event.preventDefault();
   page = 1;
   loadMoreButton.style.display = 'none';
@@ -69,26 +72,26 @@ loadMoreButton.addEventListener('click', async event => {
 });
 
 const showImages = images => {
+  clearCode();
   images.forEach(image => {
     const div = document.createElement('div');
     div.classList.add('photo-card');
     div.innerHTML = `
-          <a href="${image.webformatURL}" class="card-image"><img src="${image.webformatURL}" alt="${image.tags}" loading="lazy"/></a>
-          <div class="info">
-              <p class="info-item"><b>Likes:</b> ${image.likes}</p>
-              <p class="info-item"><b>Views:</b> ${image.views}</p>
-              <p class="info-item"><b>Comments:</b> ${image.comments}</p>
-              <p class="info-item"><b>Downloads:</b> ${image.downloads}</p>
-          </div>
-          `;
+        <a href="${image.webformatURL}" class="card-image"><img src="${image.webformatURL}" alt="${image.tags}" loading="lazy"/></a>
+        <div class="info">
+            <p class="info-item"><b>Likes:</b> ${image.likes}</p>
+            <p class="info-item"><b>Views:</b> ${image.views}</p>
+            <p class="info-item"><b>Comments:</b> ${image.comments}</p>
+            <p class="info-item"><b>Downloads:</b> ${image.downloads}</p>
+        </div>
+        `;
     gallery.appendChild(div);
   });
   let lightbox = new SimpleLightbox('.gallery .photo-card a', {
-  captionsData: 'alt',
-  captionDelay: 250,
-  captionPosition: 'bottom',
-});
-
-lightbox.on(`show.lightbox`);
-lightbox.refresh();
+        captionsData: 'alt',
+        captionDelay: 250,
+        captionPosition: 'bottom',
+  });
+  lightbox.on(`show.lightbox`);
+  lightbox.refresh();
 };

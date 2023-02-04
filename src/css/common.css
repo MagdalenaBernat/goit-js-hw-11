@@ -50,6 +50,7 @@ button[type='submit'] {
   color: rgb(247,246,249);
   border-radius: 8px;
   font-size: 16px;
+  transition: 0.3s;
   cursor: pointer;
 }
 
@@ -57,6 +58,7 @@ button:hover{
   box-shadow: 4px 4px 3px 1px rgba(0, 0, 0, 0.3);
   transform: translateX(-1) translateY(-1);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
   background-color: rgb(72,64,102);
   cursor: pointer;
 }
@@ -80,7 +82,8 @@ button:hover{
 .photo-card:hover{
   box-shadow: 8px 8px 6px 1px rgba(0, 0, 0, 0.3);
   transform: translateX(-4) translateY(-5);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  /* transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
+  transition-timing-function: cubic-bezier(.58,.34,.65,1.01);
   cursor: pointer;
 }
 
@@ -116,7 +119,7 @@ button:hover{
   display: block;
 }
 
-.load-more:hover{
+.load-more:hover {
   box-shadow: 4px 4px 3px 1px rgba(0, 0, 0, 0.3);
   transform: translateX(-1) translateY(-1);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
