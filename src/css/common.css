@@ -50,7 +50,7 @@ button[type='submit'] {
   color: rgb(247,246,249);
   border-radius: 8px;
   font-size: 16px;
-  transition: 0.3s;
+  transition: 500ms;
   cursor: pointer;
 }
 
@@ -58,7 +58,7 @@ button:hover{
   box-shadow: 4px 4px 3px 1px rgba(0, 0, 0, 0.3);
   transform: translateX(-1) translateY(-1);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 500ms;
+  transition-duration: 300ms;
   background-color: rgb(72,64,102);
   cursor: pointer;
 }
@@ -75,7 +75,7 @@ button:hover{
   margin: 10px;
   text-align: center;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
+  transition: 500ms;
   border-radius: 8px;
 }
 
@@ -84,6 +84,7 @@ button:hover{
   transform: translateX(-4) translateY(-5);
   /* transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
   transition-timing-function: cubic-bezier(.58,.34,.65,1.01);
+  transition-duration: 300ms;
   cursor: pointer;
 }
 
@@ -115,6 +116,7 @@ button:hover{
   border: 1px solid rgb(105,92,174);
   border-radius: 5px;
   font-size: 16px;
+  transition: 500ms;
   cursor: pointer;
   display: block;
 }
@@ -124,5 +126,6 @@ button:hover{
   transform: translateX(-1) translateY(-1);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   background-color: rgb(72,64,102);
+  transition-duration: 300ms;
   cursor: pointer;
 }
