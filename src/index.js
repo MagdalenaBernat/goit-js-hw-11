@@ -44,6 +44,9 @@ form.addEventListener('submit', async event => {
   if (response.data.totalHits > images.length) {
     loadMoreButton.style.display = 'block';
   }
+
+
+
 });
 
 loadMoreButton.addEventListener('click', async event => {
@@ -72,7 +75,9 @@ loadMoreButton.addEventListener('click', async event => {
 });
 
 const showImages = images => {
-  clearCode();
+  if (!loadMoreButton) {
+      clearCode();
+  };
   images.forEach(image => {
     const div = document.createElement('div');
     div.classList.add('photo-card');
