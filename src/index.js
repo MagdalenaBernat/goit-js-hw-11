@@ -44,9 +44,6 @@ form.addEventListener('submit', async event => {
   if (response.data.totalHits > images.length) {
     loadMoreButton.style.display = 'block';
   }
-
-
-
 });
 
 loadMoreButton.addEventListener('click', async event => {
